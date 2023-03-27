@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="box">
+    <span class="text-center">Sign Up</span>
+    <form th:action="@{/register/form}" th:object="${registerFormDto}" method="post">
+        <div class="input-container">
+            <input type="text" th:field="*{name}" required>
+            <label>Name</label>
+        </div>
+        <div class="input-container">
+            <input type="email" th:field="*{email}" required>
+            <label>Email</label>
+        </div>
+        <div class="input-container">
+            <input type="text" th:field="*{phone}" required>
+            <label>Phone Number</label>
+        </div>
+        <button type="submit" class="btn btn-1 btn-sep icon-info">Submit</button>
+        <span class="caption-account">Already have an account?&nbsp;<a th:href="@{/login}">Login</a></span>
+    </form>
+</div>
+</body>
+</html>

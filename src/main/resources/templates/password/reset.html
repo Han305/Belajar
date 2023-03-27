@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset Password</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="box">
+    <div th:if="${user}">
+        <form th:action="@{/password/reset}" method="post">
+            <input type="hidden" name="user" th:value="${user.id}">
+            <span class="text-center">Create Password</span>
+            <div class="input-container">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <div class="input-container">
+                <input type="password" name="confirm_password" required>
+                <label>Confirm Password</label>
+            </div>
+            <button type="submit" class="btn btn-1 btn-sep icon-info">Submit</button>
+            <span class="caption-account"><a th:href="@{/login}">Sign in</a>&nbsp; Or &nbsp; <a
+                    th:href="@{/register}">Sign Up</a></span>
+        </form>
+        <div th:unless="${user}">
+            Link reset password tidak valid
+        </div>
+    </div>
+</div>
+</body>
+</html>

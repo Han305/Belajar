@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="box">
+    <form th:action="@{/password/forgot}" method="post">
+        <span class="text-center">Forgot Password ?</span>
+        <p>Please enter your email address and we'll send you <br> an instruction on how to reset your password</p>
+        <div class="input-container">
+            <input type="email" name="email" required>
+            <label>Email</label>
+        </div>
+        <span class="caption">Back to &nbsp;<a th:href="@{/login}">Login</a></span>
+        <button type="submit" class="btn btn-1 btn-sep icon-info">
+            Submit
+        </button>
+    </form>
+</div>
+</body>
+</html>
